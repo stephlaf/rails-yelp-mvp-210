@@ -1,0 +1,13 @@
+<%= simple_form_for (@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <% @restaurant.errors.full_messages.each do |m| %>
+      <%= m %>
+    <% end %>
+  <% end %>
+
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+  <%= f.submit "Do it!", class: 'btn btn-sm btn-success' %>
+<% end %>

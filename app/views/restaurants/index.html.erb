@@ -1,0 +1,9 @@
+<h1>Restaurants#index</h1>
+
+<p><%= link_to 'Add a restaurant', new_restaurant_path, class: 'btn btn-primary btn-sm' %></p>
+
+<% @restaurants.each do |restaurant| %>
+  <ul class="list-unstyled">
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %> </li>
+  </ul>
+<% end %>
